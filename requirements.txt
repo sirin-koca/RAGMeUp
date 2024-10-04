@@ -1,2 +1,33 @@
-streamlit==1.22.0
-requests==2.28.2
+# Streamlit for the frontend
+streamlit==1.27.0  
+
+# Milvus for vector database (optional for local testing, but add when ready for Milvus setup)
+pymilvus==2.3.0  
+
+# LangChain for retrieval-augmented generation (RAG) framework
+# Using a more stable version until full compatibility with Python 3.12 is confirmed.
+langchain==0.95.0
+
+# Huggingface Transformers for loading LLM and embedding models
+# Trying a slightly older version to ensure compatibility.
+transformers==4.32.0
+
+# PyTorch for deep learning model support (used by Huggingface models)
+# Use a pre-release that supports Python 3.12.
+torch==2.1.0
+
+# Sentence-Transformers for embedding model
+# Should match the transformers version.
+sentence-transformers==2.2.2  
+
+# PyPDF2 for extracting text from PDFs
+PyPDF2==3.0.1  
+
+# Langdetect for language detection (Norwegian/English)
+langdetect==1.0.9  
+
+# FastAPI for creating the backend API
+fastapi==0.103.0  
+
+# Uvicorn for running FastAPI server
+uvicorn==0.24.0

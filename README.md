@@ -22,7 +22,8 @@ This project uses **Streamlit** for the frontend, and **LangChain**, **Milvus**,
 
 ## Project Structure
 
-```bash
+```
+
 RAGMeUp/
 │
 ├── backend/               # Backend logic for processing queries
@@ -45,3 +46,14 @@ RAGMeUp/
 ├── .gitignore             # Ignored files/folders (e.g., __pycache__/)
 ├── README.md              # Project documentation (this file)
 ├── requirements.txt       # Python dependencies
+```
+
+### Prerequisites
+- Python 3.8 or higher
+- PyCharm or any Python IDE
+- A virtual environment for dependency management
+- Git for version control
+
+
+
+
