@@ -1,0 +1,51 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Ignore virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and database files
+*.log
+*.sqlite3
+
+# Ignore PyCharm project files
+.idea/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore coverage reports
+coverage/
+*.cover
+*.coverage
+*.coveragerc
+
+# Ignore linting reports
+*.lint
+.qodana/
+
+# Ignore testing results
+.pytest_cache/
+
+# Ignore compiled files
+*.o
+*.a
+*.out
+*.class
+
+# Ignore specific files related to your project
+data/neet_pdfs/
