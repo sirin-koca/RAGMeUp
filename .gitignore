@@ -47,5 +47,3 @@ coverage/
 *.out
 *.class
 
-# Ignore specific files related to your project
-data/neet_pdfs/
