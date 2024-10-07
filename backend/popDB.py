@@ -5,7 +5,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Milvus
 
 # Set Hugging Face token and cache directory
-os.environ["HUGGINGFACE_HUB_TOKEN"] = "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"
+os.environ["HUGGINGFACE_HUB_TOKEN"] = "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"
 os.environ["TRANSFORMERS_CACHE"] = "/groups/rag2/RAGMeUp/hf_cache"
 
 
