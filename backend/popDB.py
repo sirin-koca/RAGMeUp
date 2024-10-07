@@ -2,6 +2,10 @@ from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Milvus
+import os
+
+# Set Hugging Face token in the code itself
+os.environ["HUGGINGFACE_HUB_TOKEN"] = "<your_token_here>"
 
 
 # Function to load, split, and embed PDFs
