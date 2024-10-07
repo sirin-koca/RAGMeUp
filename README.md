@@ -27,28 +27,32 @@ This project uses **Streamlit** for the frontend, and **LangChain**, **Milvus**,
 
 ```
 
+
 RAGMeUp/
 │
-├── backend/               # Backend logic for processing queries
-│   └── backend.py
+├── backend/
+│   ├── backend.py          # Main logic: load PDFs, process embeddings, interact with Milvus
+│   ├── popDB.py            # Populates the vector database (Milvus) with embeddings
+│   ├── setupLLM.py         # Initializes and configures the LLM
+│   └── milvus_utils.py     # Utility file to interact with Milvus (e.g., store, search vectors)
 │
-├── frontend/              # Streamlit frontend for user interaction
-│   └── client.py
+├── frontend/
+│   └── app.py              # Web interface, e.g., Streamlit or Flask for web-based access
 │
-├── util/                  # Helper functions (e.g., text extraction, language detection)
-│   └── helpers.py
+├── data/
+│   ├── neet/               # Folder to store the NEET PDFs
+│   └── embeddings/         # Folder to store the temporary embedding files 
 │
-├── data/                  # Directory to store PDF files
-│   └── sample_pdf1.pdf
-│   └── sample_pdf2.pdf
-│   └── sample_pdf3.pdf
+├── utils/
+│   └── helpers.py          # Utility functions, e.g., PDF loading, text cleaning, or tokenization
 │
-├── images/                # (Optional) Static assets like logo or images for the frontend
+├── /images                   # Static images if needed
+│   └── logo.png              # Optional: Navatar-Helper logo
 │
-├── app.py                 # Main entry point for the Streamlit app
-├── .gitignore             # Ignored files/folders (e.g., __pycache__/)
-├── README.md              # Project documentation (this file)
-├── requirements.txt       # Python dependencies
+├── .gitignore                # Exclude unnecessary files like __pycache__/, .env, etc.
+├── README.md                 # Project documentation and setup instructions
+├── requirements.txt          # Dependencies (e.g., LangChain, Milvus, Streamlit)
+
 ```
 
 ### Prerequisites
