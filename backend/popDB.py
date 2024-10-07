@@ -5,7 +5,7 @@ from langchain.vectorstores import Milvus
 import os
 
 # Set Hugging Face token in the code itself
-os.environ["HUGGINGFACE_HUB_TOKEN"] = "<your_token_here>"
+os.environ["HUGGINGFACE_HUB_TOKEN"] = "<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>"
 
 
 # Function to load, split, and embed PDFs
