@@ -8,6 +8,7 @@ from langchain_community.vectorstores import Milvus
 os.environ["HUGGINGFACE_HUB_TOKEN"] = "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"
 os.environ["TRANSFORMERS_CACHE"] = "/groups/rag2/RAGMeUp/hf_cache"
 
+
 # Function to load, split, and embed PDFs
 def populate_milvus():
     # Load PDFs
@@ -33,6 +34,7 @@ def populate_milvus():
     vector_db = Milvus.from_documents(docs, embeddings, collection_name="neet_collection")
 
     print("Milvus database populated with NEET embeddings")
+
 
 if __name__ == "__main__":
     populate_milvus()
