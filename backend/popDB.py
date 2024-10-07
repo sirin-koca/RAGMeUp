@@ -1,12 +1,12 @@
-from langchain.document_loaders import PyPDFLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import Milvus
 import os
+from langchain_community.document_loaders import PyPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Milvus
 
-# Set Hugging Face token in the code itself
-os.environ["HUGGINGFACE_HUB_TOKEN"] = "<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>"
-
+# Set Hugging Face token and cache directory
+os.environ["HUGGINGFACE_HUB_TOKEN"] = "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"
+os.environ["TRANSFORMERS_CACHE"] = "/groups/rag2/RAGMeUp/hf_cache"
 
 # Function to load, split, and embed PDFs
 def populate_milvus():
@@ -33,7 +33,6 @@ def populate_milvus():
     vector_db = Milvus.from_documents(docs, embeddings, collection_name="neet_collection")
 
     print("Milvus database populated with NEET embeddings")
-
 
 if __name__ == "__main__":
     populate_milvus()
