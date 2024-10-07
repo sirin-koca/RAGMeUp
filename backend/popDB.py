@@ -8,9 +8,9 @@ from langchain.vectorstores import Milvus
 def populate_milvus():
     # Load PDFs
     pdf_paths = [
-        "../data/neet/NEET1YoungInTodaysLabourMarketOffer.pdf",
-        "../data/neet/NEET2EthnicityGenderHouseholdNEETIntersectional.pdf",
-        "../data/neet/NEET3YouthMentalHealthServices.pdf"
+        "./data/neet/NEET1YoungInTodaysLabourMarketOffer.pdf",
+        "./data/neet/NEET2EthnicityGenderHouseholdNEETIntersectional.pdf",
+        "./data/neet/NEET3YouthMentalHealthServices.pdf"
     ]
 
     documents = []
