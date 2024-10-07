@@ -6,7 +6,7 @@ pymilvus==2.3.0
 
 # LangChain for retrieval-augmented generation (RAG) framework
 # Using a more stable version until full compatibility with Python 3.12 is confirmed.
-langchain==0.95.0
+langchain==0.3.2
 
 # Huggingface Transformers for loading LLM and embedding models
 # Trying a slightly older version to ensure compatibility.
