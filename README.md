@@ -1,6 +1,9 @@
-# RAGMeUp TEST
+# RAGMeUp
 
-RAGMeUp is a Retrieval-Augmented Generation (RAG) chatbot designed to answer questions specifically about NEET (Not in Employment, Education, or Training) based on a dataset of 130 PDFs. It retrieves relevant information from the PDFs and generates accurate, domain-specific responses. 
+**RAG** - an advanced AI-powered chatbot solution leveraging the Retrieval-Augmented Generation (RAG) methodology. 
+This involves integrating state-of-the-art artificial intelligence techniques to enhance user interaction and deliver accurate responses in real-time.
+
+**RAGMeUp** is a demo project for Retrieval-Augmented Generation (RAG) chatbot designed to answer questions specifically about NEET (Not in Employment, Education, or Training) based on a dataset of 130 PDFs. It retrieves relevant information from the PDFs and generates accurate, domain-specific responses. 
 
 ## Project Overview
 

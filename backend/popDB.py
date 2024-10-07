@@ -3,36 +3,33 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import Milvus
 
-# Define paths
-pdf_dir = "data/neet/"  # Directory where your NEET PDFs are stored
-embedding_model_name = "sentence-transformers/all-mpnet-base-v2"  # Example embedding model
-milvus_collection_name = "NEET_Embeddings"
 
-# Initialize text splitter and embedding model
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
-embedder = HuggingFaceEmbeddings(model_name=embedding_model_name)
+# Function to load, split, and embed PDFs
+def populate_milvus():
+    # Load PDFs
+    pdf_paths = [
+        "../data/neet/NEET1YoungInTodaysLabourMarketOffer.pdf",
+        "../data/neet/NEET2EthnicityGenderHouseholdNEETIntersectional.pdf",
+        "../data/neet/NEET3YouthMentalHealthServices.pdf"
+    ]
 
-
-# Load PDFs and process
-def process_pdfs():
-    pdf_files = ["NEET1.pdf", "NEET2.pdf"]  # Add your actual PDF file names here
     documents = []
+    for pdf_path in pdf_paths:
+        loader = PyPDFLoader(pdf_path)
+        documents.extend(loader.load())
 
-    for pdf_file in pdf_files:
-        loader = PyPDFLoader(f"{pdf_dir}/{pdf_file}")
-        # Load and split the PDF content
-        doc = loader.load()
-        chunks = text_splitter.split_documents(doc)
-        documents.extend(chunks)
+    # Split documents into smaller chunks
+    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=20)
+    docs = splitter.split_documents(documents)
 
-    # Generate embeddings for the documents
-    embeddings = embedder.embed_documents([doc.page_content for doc in documents])
+    # Embedding model
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
-    # Store embeddings in Milvus
-    milvus = Milvus.from_documents(documents, embedding=embedder, collection_name=milvus_collection_name)
+    # Store vectors in Milvus
+    vector_db = Milvus.from_documents(docs, embeddings, collection_name="neet_collection")
 
-    print("PDFs processed and embeddings stored successfully in Milvus.")
+    print("Milvus database populated with NEET embeddings")
 
 
 if __name__ == "__main__":
-    process_pdfs()
+    populate_milvus()
