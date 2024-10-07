@@ -1,4 +1,5 @@
 import os
+from huggingface_hub import HfFolder
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -7,6 +8,9 @@ from langchain_community.vectorstores import Milvus
 # Set Hugging Face token and cache directory
 os.environ["HUGGINGFACE_HUB_TOKEN"] = "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"
 os.environ["TRANSFORMERS_CACHE"] = "/groups/rag2/RAGMeUp/hf_cache"
+
+# Override Hugging Face cache directory inside the script
+HfFolder.path = lambda: "/groups/rag2/RAGMeUp/hf_cache"
 
 
 # Function to load, split, and embed PDFs
